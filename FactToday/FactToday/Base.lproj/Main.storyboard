@@ -87,7 +87,7 @@
         <!--View Controller-->
         <scene sceneID="8rf-ci-fTN">
             <objects>
-                <viewController id="uBP-oy-Szk" sceneMemberID="viewController">
+                <viewController id="uBP-oy-Szk" customClass="ViewController" customModule="FactToday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ppn-rf-gAg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,6 +111,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="Qro-BQ-EWK"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="textView" destination="fUZ-2I-Kdg" id="B5k-wh-gpM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eYy-Au-W1u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
