@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FactViewController: UIViewController {
     
     @IBOutlet weak var textView: UITextView!
     
@@ -16,10 +16,20 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
+        obtainNewFact()
         configureGestures()
     }
     
     private func configureUI() {
+    }
+    
+    private func obtainPreviousFact(animated: Bool=false) {
+        textView.setText(factModel.previousFact, animated: animated)
+    }
+    
+    private func obtainNewFact(animated: Bool=false) {
+        textView.setText(factModel.newFact, animated: animated)
     }
     
     private func configureGestures() {
@@ -32,16 +42,21 @@ class ViewController: UIViewController {
     }
     
     @objc private func swipeLeft() {
-        textView.setText(factModel.newFact, animated: true)
+        obtainNewFact(animated: true)
     }
     
     @objc private func swipeRight() {
-        textView.setText(factModel.previousFact, animated: true)
+        obtainPreviousFact(animated: true)
+    }
+    
+    @IBAction func addNewFact() {
+        let vc = storyboard!.instantiateViewController(withIdentifier: "NewFactViewController")
+        present(vc, animated: true, completion: nil)
     }
     
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            textView.setText(factModel.newFact, animated: true)
+            obtainNewFact(animated: true)
         }
     }
 
@@ -50,6 +65,8 @@ class ViewController: UIViewController {
 extension UITextView {
     
     func setText(_ text: String, animated: Bool = false) {
+        
+        guard animated else { self.text = text; return }
         
         let fadeIn: () -> () = { [unowned self] in
             self.alpha = 0

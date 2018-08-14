@@ -15,7 +15,7 @@ final class FactModel {
         return "New string, new string, new string"
     }
     
-    var previousFact: String! {
+    var previousFact: String! {        
         return "Prevoius string, prevoius string, prevoius string"
     }
     

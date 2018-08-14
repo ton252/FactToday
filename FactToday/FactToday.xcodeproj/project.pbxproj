@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7110FAB021149E6B00CB559E /* NewFactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110FAAF21149E6B00CB559E /* NewFactViewController.swift */; };
 		718697C72107106E000768A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718697C62107106E000768A8 /* AppDelegate.swift */; };
-		718697C92107106E000768A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718697C82107106E000768A8 /* ViewController.swift */; };
+		718697C92107106E000768A8 /* FactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718697C82107106E000768A8 /* FactViewController.swift */; };
 		718697CC2107106E000768A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 718697CA2107106E000768A8 /* Main.storyboard */; };
 		718697CE2107106F000768A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 718697CD2107106F000768A8 /* Assets.xcassets */; };
 		718697D12107106F000768A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 718697CF2107106F000768A8 /* LaunchScreen.storyboard */; };
@@ -16,9 +17,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7110FAAF21149E6B00CB559E /* NewFactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFactViewController.swift; sourceTree = "<group>"; };
 		718697C32107106E000768A8 /* FactToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FactToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		718697C62107106E000768A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		718697C82107106E000768A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		718697C82107106E000768A8 /* FactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactViewController.swift; sourceTree = "<group>"; };
 		718697CB2107106E000768A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		718697CD2107106F000768A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		718697D02107106F000768A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,7 +60,8 @@
 			children = (
 				71D6FDEF2108A1D7007BFF38 /* FactModel.swift */,
 				718697C62107106E000768A8 /* AppDelegate.swift */,
-				718697C82107106E000768A8 /* ViewController.swift */,
+				718697C82107106E000768A8 /* FactViewController.swift */,
+				7110FAAF21149E6B00CB559E /* NewFactViewController.swift */,
 				718697CA2107106E000768A8 /* Main.storyboard */,
 				718697CD2107106F000768A8 /* Assets.xcassets */,
 				718697CF2107106F000768A8 /* LaunchScreen.storyboard */,
@@ -77,6 +80,7 @@
 				718697BF2107106E000768A8 /* Sources */,
 				718697C02107106E000768A8 /* Frameworks */,
 				718697C12107106E000768A8 /* Resources */,
+				7110FAA121131EAF00CB559E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -133,13 +137,30 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7110FAA121131EAF00CB559E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "result=\"$(~/GitHub/semver/semver.sh ~/GitHub/)\"\necho $result >> $SRCROOT/version.h\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		718697BF2107106E000768A8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				71D6FDF02108A1D7007BFF38 /* FactModel.swift in Sources */,
-				718697C92107106E000768A8 /* ViewController.swift in Sources */,
+				7110FAB021149E6B00CB559E /* NewFactViewController.swift in Sources */,
+				718697C92107106E000768A8 /* FactViewController.swift in Sources */,
 				718697C72107106E000768A8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

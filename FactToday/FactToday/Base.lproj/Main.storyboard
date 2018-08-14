@@ -84,16 +84,16 @@
             </objects>
             <point key="canvasLocation" x="-154" y="234"/>
         </scene>
-        <!--View Controller-->
+        <!--Fact View Controller-->
         <scene sceneID="8rf-ci-fTN">
             <objects>
-                <viewController id="uBP-oy-Szk" customClass="ViewController" customModule="FactToday" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="uBP-oy-Szk" customClass="FactViewController" customModule="FactToday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ppn-rf-gAg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fUZ-2I-Kdg">
-                                <rect key="frame" x="16" y="233" width="343.5" height="200"/>
+                                <rect key="frame" x="16" y="233.5" width="343" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -109,7 +109,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dZI-l0-YW3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Qro-BQ-EWK"/>
+                    <navigationItem key="navigationItem" id="Qro-BQ-EWK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rwd-3A-p6g">
+                            <connections>
+                                <action selector="addNewFact" destination="uBP-oy-Szk" id="nDX-gd-rj9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="textView" destination="fUZ-2I-Kdg" id="B5k-wh-gpM"/>
@@ -118,6 +124,82 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eYy-Au-W1u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="558" y="-746"/>
+        </scene>
+        <!--New Fact View Controller-->
+        <scene sceneID="0tr-Tf-4kK">
+            <objects>
+                <viewController id="6kv-xe-7nL" customClass="NewFactViewController" customModule="FactToday" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XT5-np-Qf5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="epd-Cy-bwB">
+                                <rect key="frame" x="16" y="80" width="343" height="521"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A74-QN-22q">
+                                <rect key="frame" x="0.0" y="601" width="375" height="66"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JlU-Z6-VWj">
+                                        <rect key="frame" x="16" y="16" width="343" height="34"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="8"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="JlU-Z6-VWj" firstAttribute="leading" secondItem="A74-QN-22q" secondAttribute="leading" constant="16" id="IEE-1B-9ht"/>
+                                    <constraint firstAttribute="bottom" secondItem="JlU-Z6-VWj" secondAttribute="bottom" constant="16" id="Kd4-lK-qgt"/>
+                                    <constraint firstAttribute="trailing" secondItem="JlU-Z6-VWj" secondAttribute="trailing" constant="16" id="RbX-gx-feS"/>
+                                    <constraint firstItem="JlU-Z6-VWj" firstAttribute="top" secondItem="A74-QN-22q" secondAttribute="top" constant="16" id="q8H-Co-XZp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="epd-Cy-bwB" firstAttribute="leading" secondItem="FDg-wu-IpO" secondAttribute="leading" constant="16" id="3eD-Td-ixt"/>
+                            <constraint firstItem="A74-QN-22q" firstAttribute="trailing" secondItem="FDg-wu-IpO" secondAttribute="trailing" id="Jhd-XR-z3o"/>
+                            <constraint firstItem="A74-QN-22q" firstAttribute="bottom" secondItem="FDg-wu-IpO" secondAttribute="bottom" id="SD4-AS-YK0"/>
+                            <constraint firstItem="A74-QN-22q" firstAttribute="leading" secondItem="FDg-wu-IpO" secondAttribute="leading" id="TF1-4C-eZZ"/>
+                            <constraint firstItem="A74-QN-22q" firstAttribute="top" secondItem="epd-Cy-bwB" secondAttribute="bottom" id="d4P-fX-Lsg"/>
+                            <constraint firstItem="epd-Cy-bwB" firstAttribute="top" secondItem="FDg-wu-IpO" secondAttribute="top" constant="16" id="gnO-PQ-ocp"/>
+                            <constraint firstItem="FDg-wu-IpO" firstAttribute="trailing" secondItem="epd-Cy-bwB" secondAttribute="trailing" constant="16" id="scA-zD-Qf3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FDg-wu-IpO"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="z96-nU-dbf">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="stop" id="on2-rG-QXg">
+                            <connections>
+                                <action selector="dismissAction" destination="6kv-xe-7nL" id="n9x-0b-WAD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TE3-ss-e6M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2029.5999999999999" y="-747.07646176911555"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zZZ-v0-fIP">
+            <objects>
+                <navigationController storyboardIdentifier="NewFactViewController" id="0lq-eO-P5r" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="58d-LV-1mU">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="6kv-xe-7nL" kind="relationship" relationship="rootViewController" id="5hx-iS-lKl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iho-cT-uMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1238" y="-747"/>
         </scene>
         <!--Fact-->
         <scene sceneID="8gJ-ah-dv6">
