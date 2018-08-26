@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7110FAB021149E6B00CB559E /* NewFactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110FAAF21149E6B00CB559E /* NewFactViewController.swift */; };
+		717F355221330468005365CC /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 717F355121330468005365CC /* Realm.framework */; };
+		717F3554213305DA005365CC /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 717F3553213305DA005365CC /* RealmSwift.framework */; };
 		718697C72107106E000768A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718697C62107106E000768A8 /* AppDelegate.swift */; };
 		718697C92107106E000768A8 /* FactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718697C82107106E000768A8 /* FactViewController.swift */; };
 		718697CC2107106E000768A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 718697CA2107106E000768A8 /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		7110FAAF21149E6B00CB559E /* NewFactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFactViewController.swift; sourceTree = "<group>"; };
+		717F355121330468005365CC /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		717F3553213305DA005365CC /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		718697C32107106E000768A8 /* FactToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FactToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		718697C62107106E000768A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		718697C82107106E000768A8 /* FactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactViewController.swift; sourceTree = "<group>"; };
@@ -33,17 +37,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				717F3554213305DA005365CC /* RealmSwift.framework in Frameworks */,
+				717F355221330468005365CC /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		717F354E2133043F005365CC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				717F3553213305DA005365CC /* RealmSwift.framework */,
+				717F355121330468005365CC /* Realm.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		718697BA2107106E000768A8 = {
 			isa = PBXGroup;
 			children = (
 				718697C52107106E000768A8 /* FactToday */,
 				718697C42107106E000768A8 /* Products */,
+				717F354E2133043F005365CC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,7 +96,7 @@
 				718697BF2107106E000768A8 /* Sources */,
 				718697C02107106E000768A8 /* Frameworks */,
 				718697C12107106E000768A8 /* Resources */,
-				7110FAA121131EAF00CB559E /* ShellScript */,
+				7110FAA121131EAF00CB559E /* Carthage Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -138,18 +154,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7110FAA121131EAF00CB559E /* ShellScript */ = {
+		7110FAA121131EAF00CB559E /* Carthage Copy Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 			);
+			name = "Carthage Copy Frameworks";
 			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Realm.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "result=\"$(~/GitHub/semver/semver.sh ~/GitHub/)\"\necho $result >> $SRCROOT/version.h\n\n";
+			shellScript = "carthage copy-frameworks\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -307,6 +328,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E45G6E28GQ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FactToday/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -325,6 +350,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E45G6E28GQ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FactToday/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

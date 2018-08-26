@@ -79,6 +79,7 @@ extension UITextView {
         }
 
         UIView.animate(withDuration: 0.5, animations: fadeIn, completion: fadeOut)
+        
 //        UIView.animateKeyframes(withDuration: 8.0, delay: 0, options: [], animations: {
 //            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.5, animations: {
 //                self.alpha = 0

@@ -174,7 +174,7 @@
                         <viewLayoutGuide key="safeArea" id="FDg-wu-IpO"/>
                     </view>
                     <navigationItem key="navigationItem" id="z96-nU-dbf">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="stop" id="on2-rG-QXg">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="on2-rG-QXg">
                             <connections>
                                 <action selector="dismissAction" destination="6kv-xe-7nL" id="n9x-0b-WAD"/>
                             </connections>
